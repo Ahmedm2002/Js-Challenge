@@ -56,10 +56,10 @@ para3.addEventListener('mouseover', (e)=>{
   para3.style.borderColor = 'yellow'
 })
 
-// para3.addEventListener('mouseout', (e)=>{
-//   e.preventDefault();
-//   para3.style.boderColor = 'none'
-// })
+para3.addEventListener('mouseout', (e)=>{
+  e.preventDefault();
+  para3.style.boderColor = 'none'
+})
 
 //        /*******************************************************/
 //        /********************** Scripts ************************/
