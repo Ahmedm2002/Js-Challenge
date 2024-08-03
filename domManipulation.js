@@ -39,9 +39,9 @@ image.setAttribute('src','./two.JPG' )
 
 const manipulateCss = document.querySelector('.changeCss');
 manipulateCss.style.backgroundColor = 'green';
-console.log(manipulateCss.classList);
+// console.log(manipulateCss.classList);
 manipulateCss.classList.remove('arbitrary')
-console.log(manipulateCss.classList);
+// console.log(manipulateCss.classList);
 
 //        /********************** Event Handling ***********************/
 
@@ -56,7 +56,78 @@ para3.addEventListener('mouseover', (e)=>{
   para3.style.borderColor = 'yellow'
 })
 
-para3.addEventListener('mouseout', (e)=>{
-  e.preventDefault();
-  para3.style.boderColor = 'none'
-})
+// para3.addEventListener('mouseout', (e)=>{
+//   e.preventDefault();
+//   para3.style.boderColor = 'none'
+// })
+
+//        /*******************************************************/
+//        /********************** Scripts ************************/
+//        /*******************************************************/
+
+
+//        Text Manipulation Script
+
+function changeText() {
+  const heading2 = document.getElementById('heading2');
+  heading2.innerText = 'Text Changed';
+}
+
+changeText();
+
+//        Element Creation Script
+
+function createElement(elementType, text) {  
+  const element = document.createElement(elementType);
+  if(text){
+    element.innerText = text
+  }
+  body.append(element)
+}
+
+createElement('h2', 'Heading 2 created using js')
+createElement('hr')
+createElement('div', 'This is a Div created using js')
+
+//        Element Removal Script
+
+function removeElement(element) {
+  body.removeChild(element);
+}
+const element = document.querySelector('#tobeRemoved')
+removeElement(element);
+
+//        Attribute Modification Script
+
+function changeAttribute(element, attribute, newValue) {
+  element.removeAttribute(attribute)
+  element.setAttribute(attribute, newValue);
+  element.setAttribute('width', '250px');
+  element.setAttribute('height', '200px');
+}
+
+const changeImg = document.querySelector('.changePic');
+
+changeAttribute(changeImg, 'src', './two.JPG')
+
+//        Event Handling Script
+
+function manageEvents() {
+  const button = document.querySelector('#button');
+
+  button.addEventListener('mouseover', (e) => {
+    e.preventDefault();
+    button.style.backgroundColor = 'orange';
+    button.innerText = 'I am Hovered'
+    button.style.color = 'white';
+  });
+
+  button.addEventListener('mouseout', (e) => {
+    e.preventDefault();
+    button.style.backgroundColor = '';
+    button.innerText = 'Hover Me'
+    button.style.color = '';
+  });
+}
+
+manageEvents();
